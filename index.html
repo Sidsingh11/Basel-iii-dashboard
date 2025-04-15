@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Basel III Dashboard</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
   <h2>Capital Ratios Under Stress Scenarios</h2>
-  <div id="chart"></div>
+  <div id="chart" style="width: 100%; max-width: 900px; height: 500px;"></div>
 
   <script>
     var data = [
-      { x: ['Baseline', 'Adverse', 'Severely Adverse'], y: [15.0, 12.0, 10.4], name: 'CET1 Ratio', type: 'bar' },
-      { x: ['Baseline', 'Adverse', 'Severely Adverse'], y: [16.5, 13.5, 11.0], name: 'Tier 1 Capital Ratio', type: 'bar' },
-      { x: ['Baseline', 'Adverse', 'Severely Adverse'], y: [18.0, 15.0, 12.5], name: 'Total Capital Ratio', type: 'bar' }
+      {
+        x: ['Baseline', 'Adverse', 'Severely Adverse'],
+        y: [15.0, 12.0, 10.4],
+        name: 'CET1 Ratio',
+        type: 'bar'
+      },
+      {
+        x: ['Baseline', 'Adverse', 'Severely Adverse'],
+        y: [16.5, 13.5, 11.0],
+        name: 'Tier 1 Capital Ratio',
+        type: 'bar'
+      },
+      {
+        x: ['Baseline', 'Adverse', 'Severely Adverse'],
+        y: [18.0, 15.0, 12.5],
+        name: 'Total Capital Ratio',
+        type: 'bar'
+      }
     ];
 
     var layout = {
       barmode: 'group',
       title: 'Basel III Capital Adequacy',
-      yaxis: { title: 'Capital Ratio (%)' }
+      yaxis: {
+        title: 'Capital Ratio (%)'
+      }
     };
 
     Plotly.newPlot('chart', data, layout);
